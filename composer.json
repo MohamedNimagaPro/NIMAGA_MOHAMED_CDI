@@ -1,0 +1,13 @@
+{
+    "name": "moham/composer",
+    "description": "Test projet composer",
+    "autoload": {
+        "psr-4": {
+            "Moham\\Composer\\": "src/"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.24",
+        "guzzlehttp/guzzle": "^7.10"
+    }
+}

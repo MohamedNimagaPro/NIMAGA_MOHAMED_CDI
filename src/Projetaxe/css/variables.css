@@ -1,0 +1,42 @@
+:root {
+    /* mode jour par défaut */
+    --bg-image: url('../backgroundpokemon.jpg'); 
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --text: #2c3e50;
+    --text-muted: #555;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: #ddd;
+    
+    --primary: #00A1E9;   
+    --secondary: #E5005A; 
+    --accent: #FFD700;    
+    --header-bg: rgba(255, 255, 255, 0.95);
+    
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+    /* les couleurs des types */
+    --t-plante: #78C850; --t-feu: #F08030; --t-eau: #6890F0;
+    --t-electrik: #F8D030; --t-psy: #F95587; --t-combat: #C22E28;
+    --t-tenebres: #705746; --t-fee: #EE99AC; --t-dragon: #6F35FC;
+    --t-acier: #B7B7CE; --t-spectre: #735797; --t-glace: #96D9D6;
+    --t-roche: #B6A136; --t-sol: #E2BF65; --t-normal: #A8A77A;
+    --t-vol: #A98FF3; --t-insecte: #A6B91A; --t-poison: #A33EA1;
+}
+
+/* mode nuit (ectoplasma style) */
+body.night-mode {
+    --bg-image: url('../backgroundpokemonnight.jpg'); 
+    --glass-bg: rgba(20, 20, 40, 0.85);
+    --glass-border: rgba(100, 100, 255, 0.3);
+    --text: #e0e0e0;
+    --text-muted: #aaa;
+    --card-bg: rgba(30, 30, 40, 0.95);
+    --card-border: #444;
+    
+    --primary: #00ffff;
+    --secondary: #ff00ff;
+    --header-bg: rgba(15, 15, 30, 0.95);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}

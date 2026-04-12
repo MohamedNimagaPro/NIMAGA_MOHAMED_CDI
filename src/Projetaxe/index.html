@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéGame - Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>Poké<span>Game</span></h1>
+        </div>
+        
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+            <button id="burger-btn" aria-label="Ouvrir le menu">☰</button>
+        </div>
+
+        <nav id="sidebar" class="nav-menu">
+            <button id="close-btn" aria-label="Fermer le menu">&times;</button>
+            <ul>
+                <li><a href="index.html" class="active">Collection</a></li>
+                <li><a href="profile.html">Mon Inventaire</a></li>
+                <li><a href="tcg.php" style="color: var(--secondary); text-shadow: 0 0 10px rgba(229,0,90,0.5);">🔥 Pokémon TCG</a></li>
+                <li><a href="login.html">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="filters glass-panel">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Chercher un Pokémon...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-type="all">Tout</button>
+                <button class="filter-btn" data-type="Plante">Plante</button>
+                <button class="filter-btn" data-type="Feu">Feu</button>
+                <button class="filter-btn" data-type="Eau">Eau</button>
+                <button class="filter-btn" data-type="Électrik">Électrik</button>
+                <button class="filter-btn" data-type="Ténèbres">Ténèbres</button>
+                <button class="filter-btn" data-type="Fée">Fée</button>
+                <button class="filter-btn" data-type="Dragon">Dragon</button>
+            </div>
+        </section>
+
+        <section class="card-grid" id="collection-grid"></section>
+    </main>
+
+    <div class="fab-container">
+        <button id="fab-trade" class="fab-btn">
+            <span style="font-size: 1.5rem;">⇄</span>
+        </button>
+    </div>
+
+    <div id="trade-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Centre d'Échange</h2>
+            <p style="margin-bottom: 15px; color: #666; font-size: 0.9rem;">Échange une carte pour en avoir une nouvelle au hasard !</p>
+            <form id="trade-form">
+                <div class="form-group">
+                    <label>Avec qui ?</label>
+                    <select class="modal-select">
+                        <option>Tarak</option>
+                        <option>Nabil</option>
+                        <option>Rosemary</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tu donnes quoi ?</label>
+                    <select id="trade-select" class="modal-select" required>
+                        <option value="">-- Choisis une carte --</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width">Valider l'échange</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://www.iim.fr/ecole-web/wp-content/uploads/2020/10/Logo-IIM-fd-blanc.png" alt="Logo IIM" class="footer-logo">
+            <p>Projet Mohamed Nimaga IIM - Axe CDI 2025-2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

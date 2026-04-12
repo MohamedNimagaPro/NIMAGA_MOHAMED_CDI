@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Inventaire - PokéGame</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <style>
+        /* --- Style du bouton Trailer --- */
+        .trailer-container {
+            text-align: center;
+            margin: 30px 0 10px 0;
+        }
+
+        .btn-trailer {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-trailer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+            color: white;
+        }
+
+        /* --- Style du Swiper --- */
+        .swiper-banner-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0 40px 0; /* Ajusté pour laisser la place au bouton */
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .swiper-slide {
+            font-size: 18px;
+            color: #fff;
+            box-sizing: border-box;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 130%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .swiper-slide .title {
+            font-size: 35px;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .swiper-slide .subtitle {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #f1c40f;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .swiper-slide .text {
+            font-size: 15px;
+            max-width: 500px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>Poké<span>Game</span></h1>
+        </div>
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+            <button id="burger-btn" aria-label="Menu Mobile">☰</button>
+        </div>
+        <nav id="sidebar" class="nav-menu">
+            <button id="close-btn" aria-label="Fermer le menu">&times;</button>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="profile.html" class="active">Mon Inventaire</a></li>
+                <li><a href="tcg.php" style="color: var(--secondary); text-shadow: 0 0 10px rgba(229,0,90,0.5);">🔥 Pokémon TCG</a></li>
+                <li><a href="login.html">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile-header glass-panel">
+            <div class="avatar-circle">
+                <img src="https://img.pokemondb.net/sprites/sword-shield/icon/zacian-crowned.png" alt="Avatar">
+            </div>
+            <div class="user-info">
+                <h2>Maître de la Ligue</h2>
+                <p>Rang : Champion Galar</p>
+                <div class="stats-user">
+                    <span id="inventory-count">Cartes : 0</span> | 
+                    <span id="fav-count">Favoris : 0</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="trailer-container">
+            <a href="https://www.youtube.com/watch?v=fKiz265SMME" class="glightbox btn-trailer">
+                ▶️ Regarder le Trailer de Galar
+            </a>
+        </div>
+
+        <div class="swiper mySwiper swiper-banner-container" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+            
+            <div class="parallax-bg" style="background-image: url('pokemob.jpg');" data-swiper-parallax="-23%"></div>
+            
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">La Région de Galar</div>
+                <div class="subtitle" data-swiper-parallax="-200">Un monde inspiré du Royaume-Uni</div>
+                <div class="text" data-swiper-parallax="-100">
+                  <p>Bienvenue à Galar, une région vaste et diversifiée mêlant des campagnes paisibles, des forêts épaisses et des villes à l'architecture industrielle très développée. Ici, les combats Pokémon sont le sport national !</p>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Les Terres Sauvages</div>
+                <div class="subtitle" data-swiper-parallax="-200">L'aventure en monde ouvert</div>
+                <div class="text" data-swiper-parallax="-100">
+                  <p>Au cœur de Galar se trouve une immense étendue de nature : les Terres Sauvages. La météo très changeante influence directement les espèces de Pokémon surpuissants que vous croiserez en liberté.</p>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">Le Phénomène Dynamax</div>
+                <div class="subtitle" data-swiper-parallax="-200">Des affrontements titanesques</div>
+                <div class="text" data-swiper-parallax="-100">
+                  <p>Grâce au Poignet Dynamax, les Pokémon prennent des proportions colossales lors des combats, décuplant leur puissance et modifiant leurs attaques. Certains possèdent même une forme "Gigamax" !</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <h2 class="section-title">Mon Inventaire</h2>
+        <section class="card-grid" id="inventory-grid"></section>
+        
+        <div id="no-inv-msg" style="text-align:center; display:none; margin-bottom: 40px;">
+            <p style="color: var(--text);">T'as rien pour l'instant. Va chasser !</p>
+            <a href="index.html" class="btn-primary" style="display:inline-block; width:auto; margin-top:10px;">Chasser</a>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 50px; border-top: 1px solid var(--glass-border); padding-top: 20px;">Favoris</h2>
+        <section class="card-grid" id="favorites-grid"></section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://www.iim.fr/ecole-web/wp-content/uploads/2020/10/Logo-IIM-fd-blanc.png" alt="Logo IIM" class="footer-logo">
+            <p>&copy; 2026 PokéGame Inc. - Projet IIM</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    
+    <script src="script.js"></script>
+
+    <script>
+        // Initialisation de GLightbox
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true // La vidéo se lance toute seule quand on clique
+        });
+
+        // Initialisation de Swiper
+        var swiper = new Swiper(".mySwiper", {
+            speed: 600,
+            parallax: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription - PokéGame</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Styles rapides pour les messages d'erreur et de succès (basés sur tes images) */
+        .message-error, .message-success {
+            display: none; /* Cachés par défaut */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .message-error.visible, .message-success.visible {
+            display: block; /* Affichés quand la classe 'visible' est là */
+        }
+        .message-error {
+            background-color: rgba(231, 76, 60, 0.2);
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+        .message-error ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .message-success {
+            background-color: rgba(46, 204, 113, 0.2);
+            border: 1px solid #2ecc71;
+            color: #2ecc71;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* Bordures vertes si succès */
+        input.success {
+            border: 2px solid #2ecc71 !important;
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+    </style>
+</head>
+<body class="auth-body">
+
+    <button id="theme-toggle" class="theme-btn absolute-btn">🌙</button>
+
+    <div class="auth-card glass-panel">
+        <div class="logo">
+            <h1>Poké<span>Game</span></h1>
+        </div>
+        <h2>Rejoindre l'Aventure</h2>
+
+        <div class="message-success">Formulaire envoyé avec succès ! Bienvenue !</div>
+        <div class="message-error">
+            <ul id="errorList"></ul>
+        </div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label>Pseudo</label>
+                <input type="text" id="pseudo" placeholder="Ex: Sacha99">
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="ton.adresse@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+            
+            <div class="form-group">
+                <label>Entrer à nouveau le mot de passe</label>
+                <input type="password" id="passwordRepeat" placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="btn-primary full-width">S'inscrire</button>
+        </form>
+        <p class="auth-link"><a href="index.html">Entrer en invité</a></p>
+    </div>
+
+    <div style="position: absolute; bottom: 20px; text-align: center; width: 100%;">
+        <img src="https://www.iim.fr/ecole-web/wp-content/uploads/2020/10/Logo-IIM-fd-blanc.png" alt="Logo IIM" style="width: 120px; opacity: 0.8;">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
