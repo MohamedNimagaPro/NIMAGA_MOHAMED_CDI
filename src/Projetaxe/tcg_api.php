@@ -43,7 +43,7 @@ $queryParams = [
     'pageSize' => 20
 ];
 
-// /!\ LA CORRECTION EST ICI /!\
+
 // On ajoute le paramètre 'q' UNIQUEMENT si l'utilisateur a filtré quelque chose
 $qString = implode(' ', $queryParts);
 if (!empty($qString)) {
